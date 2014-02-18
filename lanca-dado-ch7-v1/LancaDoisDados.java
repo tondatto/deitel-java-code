@@ -2,6 +2,9 @@
  * Programa que quantifica o total de vezes que uma
  * soma do lançamento de dois dados numa certa 
  * quantidade de lançamentos.
+ *
+ * Uso: $ java LancaDoisDados <n>
+ * - <n> : quantidade de lançamentos
  * 
  * Exercicio 7.17 - Deitel - Java HTP
  * Autor: Ricidleiv
