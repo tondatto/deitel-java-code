@@ -46,7 +46,7 @@ public class PasseioCavalo {
 				
 				tabuleiro[linhaCorrente][colunaCorrente] = ++counter;
 				
-				logPosicao();
+				//logPosicao();
 			} else {
 				throw new IllegalArgumentException("Posições devem ser entre 1 e 8.");
 			}
@@ -56,17 +56,19 @@ public class PasseioCavalo {
 			linhaCorrente += VERTICAL[idx];
 			colunaCorrente += HORIZONTAL[idx];
 			
-			logPosicao();
+			//System.out.printf("\nh: %d, v: %d\n",HORIZONTAL[idx], VERTICAL[idx]);
+			
+			//logPosicao();
 			
 			tabuleiro[linhaCorrente][colunaCorrente] = ++counter;
 			
-			imprimeTabuleiro();
+			//imprimeTabuleiro();
 		}
 		
 		public boolean isMovimentoValido(int idx){
 			return (colunaCorrente + HORIZONTAL[idx] >= 0 && colunaCorrente + HORIZONTAL[idx] < 8)
 				&& (linhaCorrente + VERTICAL[idx] >= 0 && linhaCorrente + VERTICAL[idx] < 8)
-				&& (tabuleiro[colunaCorrente + HORIZONTAL[idx]][linhaCorrente + VERTICAL[idx]] == 0);
+				&& (tabuleiro[linhaCorrente + VERTICAL[idx]][colunaCorrente + HORIZONTAL[idx]] == 0);
 		}
 		
 		public boolean isFinished(){
@@ -83,13 +85,14 @@ public class PasseioCavalo {
 		}
 		
 		public void imprimeTabuleiro(){
+			System.out.printf("\nTotal de movimentos: %d.\n", counter);
+			
 			for(int i=0; i < 8; i++){
 				for(int j=0; j< 8; j++){
 					System.out.printf("%4d", tabuleiro[i][j]);
 				}
 				System.out.println();
 			}
-			System.out.printf("\nTotal de movimentos: %d.", counter);
 		}
 		
 		public void logPosicao(){
