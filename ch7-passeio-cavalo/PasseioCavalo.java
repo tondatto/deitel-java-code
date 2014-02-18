@@ -1,4 +1,6 @@
 import java.util.Random;
+import java.util.Set;
+import java.util.HashSet;
 
 public class PasseioCavalo {
 	private Tabuleiro tabuleiro;
@@ -10,11 +12,18 @@ public class PasseioCavalo {
 	
 	public void run(){		
 		int moveNumber; 
+		Set<Integer> tentativas = new HashSet<>();
+		
 		while(!tabuleiro.isFinished()){
-			moveNumber = randomNumber.nextInt(8);
+			do {
+				moveNumber = randomNumber.nextInt(8);
+			} while (tentativas.contains(moveNumber));
 			
 			if(tabuleiro.isMovimentoValido(moveNumber)){
 				tabuleiro.setMovimento(moveNumber);
+				tentativas.clear();
+			} else {
+				tentativas.add(moveNumber);
 			}
 		}
 		
