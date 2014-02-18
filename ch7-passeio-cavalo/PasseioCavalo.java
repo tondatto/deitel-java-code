@@ -98,7 +98,7 @@ public class PasseioCavalo {
 			
 			for(int i=0; i < 8; i++){
 				for(int j=0; j< 8; j++){
-					System.out.printf("%4d", tabuleiro[i][j]);
+					System.out.printf("%4s", (tabuleiro[i][j] == 0) ? "-" : tabuleiro[i][j]);
 				}
 				System.out.println();
 			}
