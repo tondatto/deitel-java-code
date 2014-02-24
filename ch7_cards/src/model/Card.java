@@ -8,6 +8,14 @@ public class Card {
       face = cardFace;
       suit = cardSuit;
    }
+   
+   public String getFace(){
+   	return face;
+   }
+   
+   public String getSuit(){
+   	return suit;
+   }
 
    public String toString(){
       return face + " de " + suit;

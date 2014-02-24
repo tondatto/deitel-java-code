@@ -11,9 +11,12 @@ public class HandOfPokerTest {
 
       Card[] hand = new Card[5];
       
+      System.out.println("Mão de cartas:");
       for (int i = 0; i < 5; i++){
          hand[i] = myDeck.dealCard();
-         System.out.printf("%s\n",hand[i]);
+         System.out.printf("%-5s\n",hand[i]);
       }
+      
+      
    }
 }
